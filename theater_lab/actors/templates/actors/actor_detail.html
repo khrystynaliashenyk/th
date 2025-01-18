@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor Details</title>
+      <style>
+        body {
+            background-color: #460B0B;
+            color: #CB861B;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #CB861A;
+            text-decoration: none;
+            margin: 0 25px;
+        }
+        h2, p{
+            color: #ffdb84;
+        }
+        a:hover{
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+<h1>Actor Details</h1>
+<p>ID: {{ actor.pk }}</p>
+<p>Name: {{ actor.first_name }} {{ actor.last_name }}</p>
+<p>Date of Birth: {{ actor.date_of_birth }}</p>
+<a href="{% url 'actor_edit' actor.pk %}">Edit</a>
+<a href="{% url 'actor_list' %}">Back to list</a>
+
+</body>
+</html>

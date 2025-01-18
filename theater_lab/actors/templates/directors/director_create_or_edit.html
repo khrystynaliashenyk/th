@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Edit Director{% else %}Add Director{% endif %}</title>
+ <style>
+        body {
+            background-color: #460B0B;
+            color: #CB861B;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #CB861A;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        h2, p{
+            color: #ffdb84;
+        }
+        button {
+            background-color: #CB861A;
+            color: #460B0B;
+            border: none;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DAA520;
+        }
+        a:hover{
+            color: chocolate;
+        }
+        </style>
+</head>
+<body>
+<h1>{% if form.instance.pk %}Edit Director{% else %}Add Director{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"  style="margin:5px 20px ;">Save</button>
+</form>
+<a href="{% url 'director_list' %}">Back to list</a>
+</body>
+</html>

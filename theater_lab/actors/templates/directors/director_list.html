@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Directors</title>
+    <style>
+        body {
+            background-color: #460B0B;
+            color: #CB861A;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #CB861A;
+            text-decoration: none;
+        }
+        button {
+            background-color: #CB861A;
+            color: #460B0B;
+            border: none;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DAA520;
+        }
+        a:hover{
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+<h1>List of Directors</h1>
+<ul>
+    {% for director in directors %}
+        <li>
+            <a href="{% url 'director_detail' director.pk %}">{{ director.first_name }} {{ director.last_name }}</a>
+            <form method="get" action="{% url 'director_delete' director.pk %}" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'director_create' %}">Add a new director</a>
+<br>
+<a href="{% url 'home' %}"> Return to Home</a>
+</body>
+</html>

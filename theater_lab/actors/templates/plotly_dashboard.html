@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            background-color: #460B0B;
+            color: #CB861A;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #CB861A;
+            text-decoration: none;
+        }
+        button {
+            background-color: #CB861A;
+            color: #460B0B;
+            border: none;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DAA520;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analytical Dashboard</h1>
+    <h2>Average Play Duration by Genre</h2>
+
+    <div id="plotly-chart">
+        {{ plotly_chart|safe }}
+    </div>
+
+</body>
+</html>

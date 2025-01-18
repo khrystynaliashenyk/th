@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Ticket Price Dashboard</title>
+    <style>
+        body {
+            background-color: #460B0B;
+            color: #CB861A;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #CB861A;
+            text-decoration: none;
+        }
+        button {
+            background-color: #CB861A;
+            color: #460B0B;
+            border: none;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DAA520;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ticket Price Statistics</h1>
+
+
+
+    <div>
+        <h3>Ticket Price Range by Play</h3>
+        {{ ticket_price_range_plot|safe }}
+    </div>
+
+<div>
+        <h3>Average Ticket Price by Play</h3>
+        {{ avg_ticket_price_plot|safe }}
+    </div>
+</body>
+</html>
